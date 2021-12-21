@@ -46,8 +46,12 @@ const updateEntry = (id, updateEntry) =>{
             <EditEntry currentEntry={currentEntry} updateEntry={updateEntry}/>
         ): <AddEntry addEntry={addEntry} />}
     
+      {
+        entry.length > 0?(
+          <TableEntry entry={entry} deleteEntry={deleteEntry} editRow={editRow}/>
+        ): <p className={styles.message}>Table empty</p>
+      }
       
-      <TableEntry entry={entry} deleteEntry={deleteEntry} editRow={editRow}/>
       <Buttons/>
     </div>
   );
