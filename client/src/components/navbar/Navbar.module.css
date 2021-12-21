@@ -4,6 +4,7 @@
         height: 100px;
         display: flex;
         align-items: center;
+        justify-content: center;
         background: rgb(47,0,235);
         background: linear-gradient(90deg, rgba(47,0,235,1) 0%, rgba(15,34,19,1) 0%, rgba(59,255,88,1) 100%, rgba(29,253,141,1) 100%);
     }
@@ -12,6 +13,7 @@
         justify-content: space-around;
         align-items: center;
         width: 100%;
+        
     }
     
     .itemList{
@@ -24,6 +26,7 @@
         color: ghostwhite;
         font-size: 1.3rem;
         text-align: center;
+        margin:0
     }
 
     .link{

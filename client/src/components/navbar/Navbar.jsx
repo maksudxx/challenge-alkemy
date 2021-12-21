@@ -5,14 +5,16 @@ export default function NavBar() {
   return (
     <div className={styles.container}>
       <ul className={styles.list}>
-        <li className={styles.itemList}>
-          <p className={styles.option}>New entry</p>
-        </li>
-        
+        <Link to='/newEntry'  className={styles.link}>
+          <li className={styles.itemList}>
+            <p className={styles.option}>New entry</p>
+          </li>
+        </Link>
+
         <li className={styles.itemList}>
           <p className={styles.option}>About</p>
         </li>
-        
+
         <li className={styles.itemList}>
           <Link to="/" className={styles.link}>
             <p className={styles.option}>Exit</p>
