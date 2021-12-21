@@ -12,7 +12,8 @@ export default function TableEntry(props){
           </tr>
         </thead>
         <tbody>
-          {
+          { 
+            props.entry.length > 0?
             props.entry.map(entry =>(
               <tr key={entry.id}>
               <td>{entry.concept}</td>
@@ -25,7 +26,7 @@ export default function TableEntry(props){
                 <button onClick={()=>{props.deleteEntry(entry.id)}}>Delete</button>
               </td>
             </tr>
-            ))
+            )): <p>empty</p>
           }
          
         </tbody>
