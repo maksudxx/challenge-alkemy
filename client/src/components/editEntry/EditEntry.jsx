@@ -1,4 +1,5 @@
 import {useForm} from "react-hook-form"
+import styles from './EditEntry.module.css'
 export default function EditEntry(props){
 
     const {register, errors, handleSubmit, setValue} = useForm({
@@ -14,29 +15,34 @@ export default function EditEntry(props){
         e.target.reset()
     }
     return (
-      <div>
+      <div className={styles.container}>
           <h2>Edit entry</h2>
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <label>Concept</label>
+        <form onSubmit={handleSubmit(onSubmit)} className={styles.formEntry}>
+          <label className={styles.label}>Concept:</label>
           <input
             type="text"
             {...register("concept", {
               required: "Required",
             })}
+            className={styles.input}
           />
-          <label>Amount</label>
+          <br />
+          <label className={styles.label}>Amount:</label>
           <input
             type="number"
             {...register("amount", {
               required: "Required",
             })}
+            className={styles.input}
           />
-          <label>type</label>
-          <select {...register("type")}>
+          <br />
+          <label className={styles.label}>type:</label>
+          <select {...register("type")} className={styles.input}>
             <option value={"Entry"}>Entry</option>
             <option value={"expenses"}>Expenses</option>
           </select>
-          <button>Edit Entry</button>
+          <br />
+          <button className={styles.btn}>Edit Entry</button>
         </form>
       </div>
     );

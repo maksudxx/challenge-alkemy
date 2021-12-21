@@ -1,4 +1,5 @@
 import {useForm} from "react-hook-form"
+import styles from './AddEntry.module.css'
 export default function AddEntry(props){
 
     const {register, errors, handleSubmit} = useForm();
@@ -8,29 +9,34 @@ export default function AddEntry(props){
         e.target.reset()
     }
     return (
-      <div>
+      <div className={styles.container} >
           <h2>New Entry</h2>
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <label>Concept</label>
+        <form onSubmit={handleSubmit(onSubmit)} className={styles.formEntry}>
+          <label className={styles.label}>Concept: </label>
           <input
             type="text"
             {...register("concept", {
               required: "Required",
             })}
+            className={styles.input}
           />
-          <label>Amount</label>
+          <br /><br />
+          <label className={styles.label}>Amount: </label>
           <input
             type="number"
             {...register("amount", {
               required: "Required",
             })}
+            className={styles.input}
           />
-          <label>type</label>
-          <select {...register("type")}>
+          <br /><br />
+          <label className={styles.label}>type: </label>
+          <select {...register("type")} className={styles.input}>
             <option value={"Entry"}>Entry</option>
-            <option value={"expenses"}>Expenses</option>
+            <option value={"Expenses"}>Expenses</option>
           </select>
-          <button>Add new Entry</button>
+          <br /><br />
+          <button className={styles.btn}>Add new Entry</button>
         </form>
       </div>
     );

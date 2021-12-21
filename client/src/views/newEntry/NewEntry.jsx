@@ -2,6 +2,7 @@ import { useState } from "react";
 import AddEntry from "../../components/addEntry/AddEntry";
 import TableEntry from "../../components/tableEntry/TableEntry";
 import EditEntry from "../../components/editEntry/EditEntry";
+import styles from './NewEntry.module.css'
 import { v4 as uuidv4 } from "uuid";
 
 export default function NewEntry() {
@@ -39,7 +40,7 @@ const updateEntry = (id, updateEntry) =>{
 }
 
   return (
-    <div>
+    <div className={styles.container}>
         {editing?(
             <EditEntry currentEntry={currentEntry} updateEntry={updateEntry}/>
         ): <AddEntry addEntry={addEntry} />}

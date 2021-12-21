@@ -7,7 +7,6 @@ export default function TableEntry(props){
           <tr>
             <th>Concept</th>
             <th>Amount</th>
-            <th>Date</th>
             <th>Type</th>
             <th>Actions</th>
           </tr>
@@ -18,7 +17,6 @@ export default function TableEntry(props){
               <tr key={entry.id}>
               <td>{entry.concept}</td>
               <td>{entry.amount}</td>
-              <td>{Date.now()}</td>
               <td>
                  {entry.type}
               </td>

@@ -1,0 +1,39 @@
+@media(max-width: 578px){
+    .container{
+        padding: 15px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+
+    .formEntry{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 80%
+    }
+
+    .input{
+        width: 100%;
+        margin-top: 10px;
+        height: 25px;
+        border: 2px solid;
+        border-radius: 5px;
+
+    }
+    .btn{
+        height: 30px;
+        width: 50%
+    }
+
+    .title{
+        align-self: center;
+    }
+
+    .label{
+        align-self: flex-start
+    }
+   
+   
+}
