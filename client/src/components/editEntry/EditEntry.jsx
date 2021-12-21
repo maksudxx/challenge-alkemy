@@ -42,7 +42,7 @@ export default function EditEntry(props){
             <option value={"expenses"}>Expenses</option>
           </select>
           <br />
-          <button className={styles.btn}>Edit Entry</button>
+          <button className={styles.btn}>Edit</button>
         </form>
       </div>
     );

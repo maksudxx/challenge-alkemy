@@ -36,7 +36,7 @@ export default function AddEntry(props){
             <option value={"Expenses"}>Expenses</option>
           </select>
           <br /><br />
-          <button className={styles.btn}>Add new Entry</button>
+          <button className={styles.btn}>Add</button>
         </form>
       </div>
     );

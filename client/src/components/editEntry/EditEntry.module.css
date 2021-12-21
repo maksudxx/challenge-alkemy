@@ -23,7 +23,10 @@
     }
     .btn{
         height: 30px;
-        width: 50%
+        width: 50%;
+        color:white;
+        background: green;
+        border-radius: 5px;
     }
 
     .title{

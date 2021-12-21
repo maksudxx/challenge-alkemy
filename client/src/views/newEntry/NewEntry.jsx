@@ -4,6 +4,7 @@ import TableEntry from "../../components/tableEntry/TableEntry";
 import EditEntry from "../../components/editEntry/EditEntry";
 import styles from './NewEntry.module.css'
 import { v4 as uuidv4 } from "uuid";
+import Buttons from "../../components/buttons/Buttons";
 
 export default function NewEntry() {
  //state that saves income
@@ -47,6 +48,7 @@ const updateEntry = (id, updateEntry) =>{
     
       
       <TableEntry entry={entry} deleteEntry={deleteEntry} editRow={editRow}/>
+      <Buttons/>
     </div>
   );
 }
