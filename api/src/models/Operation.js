@@ -10,7 +10,7 @@ module.exports = (sequelize) => {
         type: DataTypes.DECIMAL,
         AllowNull: false,
     },
-    op_tipe: {
+    op_type: {
         type: DataTypes.STRING,
         AllowNull: false,
     }

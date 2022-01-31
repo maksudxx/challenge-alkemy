@@ -1,6 +1,6 @@
+import styles from "./TableEntry.module.css"
 export default function TableEntry(props){
 
- 
     return(
         <table>
         <thead>
