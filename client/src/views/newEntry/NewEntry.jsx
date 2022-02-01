@@ -28,7 +28,7 @@ export default function NewEntry() {
     id: null,
     concept: "",
     amount: "",
-    cat_id: "",
+    type: "",
   });
 
   //console.log(entry)
@@ -39,7 +39,7 @@ export default function NewEntry() {
       id: entry.id,
       concept: entry.concept,
       amount: entry.amount,
-      cat_id: entry.type,
+      type: entry.type,
     });
   };
 
