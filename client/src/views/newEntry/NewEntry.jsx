@@ -3,11 +3,13 @@ import AddEntry from "../../components/addEntry/AddEntry";
 import TableEntry from "../../components/tableEntry/TableEntry";
 import EditEntry from "../../components/editEntry/EditEntry";
 import styles from "./NewEntry.module.css";
+import { useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import Buttons from "../../components/buttons/Buttons";
 const operations = require("../../utils/operations")
 
 export default function NewEntry() {
+  const navigate = useNavigate()
   //state that saves income
   const [entry, setEntry] = useState([]);
   
@@ -45,6 +47,9 @@ export default function NewEntry() {
 
   const save = (entry) => {
     operations.createEntry({entry})
+    setTimeout(() => {
+      navigate('/home')
+    },2000)
   }
 
   const updateEntry = (id, updateEntry) => {
