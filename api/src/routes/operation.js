@@ -1,7 +1,7 @@
 const { Router } = require("express");
 const router = Router();
 const { Op } = require("sequelize");
-const { Operation } = require("../db.js");
+const { Operation, Category } = require("../db.js");
 const { v4: uuidv4 } = require("uuid");
 router.get("/operations", async (req, res, next) => {
   const { type } = req.query;
@@ -26,21 +26,17 @@ router.get("/operations", async (req, res, next) => {
 
 router.post("/operations", async (req, res, next) => {
   const { entry } = req.body;
-  console.log(entry);
+  let newOperation;
   try {
-    await entry.map((e) => {
-      let newOperation = Operation.create({
+     entry.map(async (e) => {
+       newOperation = await Operation.create({
+        op_id: uuidv4(),
         op_concept: e.concept,
         op_amount: e.amount,
-        op_type: e.type
       });
-      res.json(newOperation);
+      await newOperation.setCategory(e.type);
     });
-    // op_concept: concept,
-    // op_amount: amount,
-    // op_type: type
-
-    
+    res.json(newOperation);
   } catch (err) {
     next(err);
   }

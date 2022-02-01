@@ -18,4 +18,11 @@ module.exports = {
            setData(result)
        })
   },
+  getCategory: (setCategory) => {
+    fetch('http://localhost:3001/category')
+       .then(res => res.json())
+       .then((result)=>{
+           setCategory(result)
+       })
+  },
 };

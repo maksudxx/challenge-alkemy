@@ -15,9 +15,5 @@ module.exports = (sequelize) => {
         type: DataTypes.DECIMAL,
         AllowNull: false,
     },
-    op_type: {
-        type: DataTypes.STRING,
-        AllowNull: false,
-    }
   });
 };

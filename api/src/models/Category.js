@@ -2,7 +2,7 @@ const {DataTypes} =require('sequelize')
 module.exports = (sequelize) =>{
     sequelize.define('category', {
         cat_id:{
-            type: DataTypes.UUID,
+            type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true
         },

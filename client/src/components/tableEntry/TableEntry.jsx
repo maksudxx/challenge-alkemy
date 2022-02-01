@@ -14,16 +14,16 @@ export default function TableEntry(props){
         <tbody>
           { 
             
-            props.entry.map(entry =>(
-              <tr key={entry.id}>
-              <td>{entry.concept}</td>
-              <td>{entry.amount}</td>
+            props.entry.map(e =>(
+              <tr key={e.id}>
+              <td>{e.concept}</td>
+              <td>{e.amount}</td>
               <td>
-                 {entry.type}
+                 {e.type == 1? "Entry": "Expenses"}
               </td>
               <td>
-                <button onClick={()=>{props.editRow(entry)}}>Edit</button>
-                <button onClick={()=>{props.deleteEntry(entry.id)}}>Delete</button>
+                <button onClick={()=>{props.editRow(e)}}>Edit</button>
+                <button onClick={()=>{props.deleteEntry(e.id)}}>Delete</button>
               </td>
             </tr>
             ))

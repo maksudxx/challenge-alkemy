@@ -10,7 +10,7 @@ const operations = require("../../utils/operations")
 export default function NewEntry() {
   //state that saves income
   const [entry, setEntry] = useState([]);
-
+  
   //add new income
   const addEntry = (entry) => {
     entry.id = uuidv4();
@@ -19,7 +19,6 @@ export default function NewEntry() {
 
   //remove an element from the table with the parameter id
   const deleteEntry = (id) => {
-    console.log(id);
     setEntry(entry.filter((e) => e.id !== id));
   };
   //clicking on the edit button changes state to render the edit component
@@ -29,7 +28,7 @@ export default function NewEntry() {
     id: null,
     concept: "",
     amount: "",
-    type: "",
+    cat_id: "",
   });
 
   //console.log(entry)
@@ -40,12 +39,11 @@ export default function NewEntry() {
       id: entry.id,
       concept: entry.concept,
       amount: entry.amount,
-      type: entry.type,
+      cat_id: entry.type,
     });
   };
 
   const save = (entry) => {
-    console.log('ok')
     operations.createEntry({entry})
   }
 

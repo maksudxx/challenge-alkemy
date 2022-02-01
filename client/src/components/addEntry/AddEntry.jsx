@@ -1,13 +1,19 @@
 import { useForm } from "react-hook-form";
 import styles from "./AddEntry.module.css";
+import { useState, useEffect } from "react";
+const operations = require("../../utils/operations");
 export default function AddEntry(props) {
+  const [category, setCategory] = useState([]);
   const list = [];
   const { register, errors, handleSubmit } = useForm();
-  const onSubmit = (data, e) => {  
+  const onSubmit = (data, e) => {
     props.addEntry(data);
-    list.push(props)
+    list.push(props);
     e.target.reset();
   };
+  useEffect(() => {
+    operations.getCategory(setCategory);
+  }, []);
   return (
     <div className={styles.container}>
       <h2>New Entry</h2>
@@ -34,8 +40,11 @@ export default function AddEntry(props) {
         <br />
         <label className={styles.label}>type: </label>
         <select {...register("type")} className={styles.input}>
-          <option value={"Entry"}>Entry</option>
-          <option value={"Expenses"}>Expenses</option>
+          {category.map((c, index) => (
+            <option value={c.cat_id} key={index}>
+              {c.cat_description}
+            </option>
+          ))}
         </select>
         <br />
         <br />
