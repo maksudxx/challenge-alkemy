@@ -1,24 +1,21 @@
 module.exports = {
   createEntry: async ({ entry }) => {
     let body = {entry}
+    console.log(body)
     await fetch("http://localhost:3001/operations", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
       });
 
-      alert('Entries added successfully')
+      alert('Entries added ')
   },
 
-  getData: () => {
-    //console.log("entro");
-    const xhttp = new XMLHttpRequest();
-    xhttp.open("GET", `http://localhost:3001/operations`, true);
-    xhttp.send();
-    xhttp.onreadystatechange = function () {
-      if (this.readyState === 4 && this.status === 200) {
-        console.log(this.response);
-      }
-    };
+  getData: (setData) => {
+    fetch('http://localhost:3001/operations')
+       .then(res => res.json())
+       .then((result)=>{
+           setData(result)
+       })
   },
 };
