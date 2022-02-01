@@ -7,7 +7,9 @@ router.get("/operations", async (req, res, next) => {
   const { type } = req.query;
   try {
     if (!type) {
-      let operations = await Operation.findAll();
+      let operations = await Operation.findAll({
+        include: {model: Category}
+      });
       res.json(operations);
     } else {
       searchOperation = await Operation.findAll({

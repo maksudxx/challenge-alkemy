@@ -1,16 +1,34 @@
 import Navbar from "../../components/navbar/Navbar";
-import {useState, useEffect} from "react"
+import { useState, useEffect } from "react";
 import { Balance } from "../../components/balance/Balance";
-const operations = require('../../utils/operations')
-export default function Home(){
-   let [data, setData] = useState([])
-   useEffect(() => {
-       operations.getData(setData)
-   }, []);
-    return(
-        <div>
-            <Navbar/>
-            <Balance data={data}/>
-        </div>
-    )
+const operations = require("../../utils/operations");
+export default function Home() {
+  let [data, setData] = useState([]);
+  useEffect(() => {
+    operations.getData(setData);
+  }, []);
+  const total = data.reduce((sum, d) =>parseInt(sum)  +parseInt(d.op_amount), 0);
+  return (
+    <div>
+      <Navbar />
+      <div>
+        <ul>
+          {data.length > 0 ? (
+            data.map((d, index) => (
+              <Balance
+                key={index}
+                amount={d.op_amount}
+                concept={d.op_concept}
+                type={d.cat_id}
+              />
+            ))
+          ) : (
+            <p>Empty</p>
+          )}
+        </ul>
+        <h2>Total </h2>
+        <p>{total}</p>
+      </div>
+    </div>
+  );
 }
