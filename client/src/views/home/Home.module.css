@@ -1,0 +1,23 @@
+@media (max-width: 578px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  .containerCards {
+    width: 90%;
+  }
+
+  .ul {
+    padding: 0;
+  }
+
+  .balance {
+      display: flex;
+      align-items: center;
+      width: 50%;
+      justify-content: space-around;
+  }
+}

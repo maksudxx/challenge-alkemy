@@ -1,6 +1,7 @@
 import Navbar from "../../components/navbar/Navbar";
 import { useState, useEffect } from "react";
 import { Balance } from "../../components/balance/Balance";
+import styles from "./Home.module.css";
 const operations = require("../../utils/operations");
 export default function Home() {
   let [data, setData] = useState([]);
@@ -10,11 +11,15 @@ export default function Home() {
 
   const total = operations.sumBalance({ data });
   return (
-    <div>
+    <div className={styles.container}>
       <Navbar />
-      <div>
-        <h1>last movements</h1>
-        <ul>
+      <h1>Last 10 Movements</h1>
+      <span className={styles.balance}>
+        <p>Balance:</p>
+        <p>${total}</p>
+      </span>
+      <div className={styles.containerCards}>
+        <ul className={styles.ul}>
           {data.length > 0 ? (
             data.map((d, index) => (
               <Balance
@@ -28,8 +33,6 @@ export default function Home() {
             <p>Empty</p>
           )}
         </ul>
-        <h2>Balance </h2>
-        <p>${total}</p>
       </div>
     </div>
   );
