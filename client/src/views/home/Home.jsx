@@ -7,12 +7,13 @@ export default function Home() {
   useEffect(() => {
     operations.getData(setData);
   }, []);
-  
- const total = operations.sumBalance({data})
+
+  const total = operations.sumBalance({ data });
   return (
     <div>
       <Navbar />
       <div>
+        <h1>last movements</h1>
         <ul>
           {data.length > 0 ? (
             data.map((d, index) => (
