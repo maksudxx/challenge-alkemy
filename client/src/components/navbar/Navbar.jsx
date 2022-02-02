@@ -4,7 +4,10 @@ import styles from "./Navbar.module.css";
 export default function NavBar() {
   return (
     <div className={styles.container}>
-      <ul className={styles.list}>
+      
+    
+       
+     <ul className={styles.list}>
         <Link to='/newEntry'  className={styles.link}>
           <li className={styles.itemList}>
             <p className={styles.option}>New entry</p>
@@ -21,6 +24,7 @@ export default function NavBar() {
           </Link>
         </li>
       </ul>
+     
     </div>
   );
 }
