@@ -8,7 +8,8 @@ router.get("/operations", async (req, res, next) => {
   try {
     if (!type) {
       let operations = await Operation.findAll({
-        include: {model: Category}
+        include: {model: Category},
+       order: [["createdAt", "desc"]]
       });
       res.json(operations);
     } else {

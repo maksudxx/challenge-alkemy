@@ -10,6 +10,7 @@ export default function Home() {
   }, []);
 
   const total = operations.sumBalance({ data });
+  const infoPerPage = 10;
   return (
     <div className={styles.container}>
       <Navbar />
@@ -20,8 +21,10 @@ export default function Home() {
       </span>
       <div className={styles.containerCards}>
         <ul className={styles.ul}>
-          {data.length > 0 ? (
-            data.map((d, index) => (
+          {
+          data.length > 0 ? (
+            data.slice(0,infoPerPage)
+            .map((d, index) => (
               <Balance
                 key={index}
                 amount={d.op_amount}
