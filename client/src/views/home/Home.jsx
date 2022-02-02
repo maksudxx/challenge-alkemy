@@ -7,7 +7,8 @@ export default function Home() {
   useEffect(() => {
     operations.getData(setData);
   }, []);
-  const total = data.reduce((sum, d) =>parseInt(sum)  +parseInt(d.op_amount), 0);
+  
+ const total = operations.sumBalance({data})
   return (
     <div>
       <Navbar />
@@ -26,8 +27,8 @@ export default function Home() {
             <p>Empty</p>
           )}
         </ul>
-        <h2>Total </h2>
-        <p>{total}</p>
+        <h2>Balance </h2>
+        <p>${total}</p>
       </div>
     </div>
   );

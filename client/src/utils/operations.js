@@ -25,4 +25,21 @@ module.exports = {
            setCategory(result)
        })
   },
+
+  sumBalance: ({data}) => {
+    const filterExpenses = data.filter((d) => d.cat_id == 2);
+  const totalExpenses = filterExpenses.reduce(
+    (sum, d) => parseInt(sum) + parseInt(d.op_amount),
+    0
+  );
+
+  const filterEntries = data.filter((d) => d.cat_id == 1);
+  const totalEntries = filterEntries.reduce(
+    (sum, d) => parseInt(sum) + parseInt(d.op_amount),
+    0
+  );
+  return totalEntries - totalExpenses;
+  }
+
+
 };
