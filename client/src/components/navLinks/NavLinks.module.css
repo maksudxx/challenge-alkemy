@@ -9,8 +9,12 @@
 }
 
 .link{
-    color: black;
+    color: rgb(255, 255, 255);
     text-decoration: none;
+}
+
+.option{
+    font-family: 'Bakbak One', cursive;
 }
 
 @media(max-width: 768px){
@@ -20,13 +24,12 @@
         position: absolute;
         top: 60px;
         right: 0;
-        background: lightcyan;
+        background: rgb(0, 0, 0);
         width: 100%;
-        align-items: center;
-        border-top: 2px solid lightblue
+        border-top: 3px solid rgb(67, 0, 252)
     }
 
     .itemList{
-       padding-left:35% 
+       padding-left:45% 
     }
 }
