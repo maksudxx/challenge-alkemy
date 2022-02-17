@@ -1,0 +1,21 @@
+.mobileNavigation{
+    display: none
+}
+
+@media(max-width:767px){
+    .navigation{
+        display: none
+    }
+
+    .mobileNavigation{
+        display: flex;
+        background: lightcyan;
+        align-items: center;
+    }
+
+    .hamburguer{
+        position: absolute;
+        right: 5%;
+        cursor: pointer;
+    }
+}

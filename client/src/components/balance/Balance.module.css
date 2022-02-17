@@ -1,4 +1,4 @@
-@media (max-width: 578px) {
+
   .container {
     list-style: none;
     width: 100%;
@@ -27,4 +27,4 @@
   .amount {
     width: 30%;
   }
-}
+
