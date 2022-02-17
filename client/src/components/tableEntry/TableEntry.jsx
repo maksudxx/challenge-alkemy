@@ -1,35 +1,42 @@
-import styles from "./TableEntry.module.css"
-export default function TableEntry(props){
-
-    return(
-        <table>
-        <thead>
-          <tr>
-            <th>Concept</th>
-            <th>Amount</th>
-            <th>Type</th>
-            <th>Actions</th>
+import styles from "./TableEntry.module.css";
+export default function TableEntry(props) {
+  return (
+    <table className={styles.containerTable}>
+      <thead className={styles.head}>
+        <tr>
+          <th>Concept</th>
+          <th>Amount</th>
+          <th>Type</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody className={styles.head}>
+        {props.entry.map((e) => (
+          <tr key={e.id}>
+            <td>{e.concept}</td>
+            <td>{e.amount}</td>
+            <td>{e.type == 1 ? "Entry" : "Expenses"}</td>
+            <td>
+              <button
+                onClick={() => {
+                  props.editRow(e);
+                }}
+                className={styles.button}
+              >
+                Edit
+              </button>
+              <button
+                onClick={() => {
+                  props.deleteEntry(e.id);
+                }}
+                className={styles.button}
+              >
+                Delete
+              </button>
+            </td>
           </tr>
-        </thead>
-        <tbody>
-          { 
-            
-            props.entry.map(e =>(
-              <tr key={e.id}>
-              <td>{e.concept}</td>
-              <td>{e.amount}</td>
-              <td>
-                 {e.type == 1? "Entry": "Expenses"}
-              </td>
-              <td>
-                <button onClick={()=>{props.editRow(e)}}>Edit</button>
-                <button onClick={()=>{props.deleteEntry(e.id)}}>Delete</button>
-              </td>
-            </tr>
-            ))
-          }
-         
-        </tbody>
-      </table>
-    )
+        ))}
+      </tbody>
+    </table>
+  );
 }
