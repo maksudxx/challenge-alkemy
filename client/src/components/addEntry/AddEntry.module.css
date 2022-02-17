@@ -1,10 +1,66 @@
-@media(max-width: 578px){
+.container{
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.formEntry{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+}
+
+.input{
+    width: 70%;
+    margin-top: 10px;
+    height: 15px;
+    border: 0;
+    border-bottom: 2px solid rgb(67, 0, 252);
+    background: transparent
+
+}
+
+.select{
+    width: 70%;
+    margin-top: 10px;
+    border:0;
+    border-bottom: 2px solid rgb(67, 0, 252);
+    background: transparent
+   
+}
+.btn{
+    height: 30px;
+    width: 30%;
+    color:white;
+    background: rgb(0, 0, 0);
+    border-radius: 5px;
+    border: 3px solid rgb(94, 36, 255);
+    cursor: pointer;
+}
+
+.btn:hover{
+    background: rgba(0, 0, 0, 0.644);
+}
+
+
+.title{
+    align-self: center;
+}
+
+.label{
+    align-self: flex-start;
+    margin-left: 10px;
+}
+@media(max-width: 768px){
     .container{
         padding: 15px;
         display: flex;
-        align-items: center;
         flex-direction: column;
         margin-bottom: 20px;
+        align-items: center;
     }
 
     .formEntry{
@@ -14,21 +70,6 @@
         width: 80%
     }
 
-    .input{
-        width: 100%;
-        margin-top: 10px;
-        height: 25px;
-        border: 2px solid;
-        border-radius: 5px;
-
-    }
-    .btn{
-        height: 30px;
-        width: 50%;
-        color:white;
-        background: green;
-        border-radius: 5px;
-    }
 
     .title{
         align-self: center;
@@ -36,7 +77,7 @@
 
     .label{
         align-self: flex-start
-    }
+    } 
    
    
 }

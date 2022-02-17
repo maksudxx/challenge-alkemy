@@ -39,7 +39,8 @@ export default function AddEntry(props) {
         <br />
         <br />
         <label className={styles.label}>type: </label>
-        <select {...register("type")} className={styles.input}>
+        <select {...register("type")} className={styles.select}>
+          <option>Select a category...</option>
           {category.map((c, index) => (
             <option value={c.cat_id} key={index}>
               {c.cat_description}
