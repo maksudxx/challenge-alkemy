@@ -22,7 +22,7 @@ export default function EditEntry(props){
     }
     return (
       <div className={styles.container}>
-          <h2>Edit entry</h2>
+         
         <form onSubmit={handleSubmit(onSubmit)} className={styles.formEntry}>
           <label className={styles.label}>Concept:</label>
           <input

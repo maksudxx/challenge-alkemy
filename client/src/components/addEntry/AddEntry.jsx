@@ -16,7 +16,7 @@ export default function AddEntry(props) {
   }, []);
   return (
     <div className={styles.container}>
-      <h2>New Entry</h2>
+     
       <form onSubmit={handleSubmit(onSubmit)} className={styles.formEntry}>
         <label className={styles.label}>Concept: </label>
         <input

@@ -60,17 +60,26 @@ export default function NewEntry() {
   return (
     <div className={styles.container}>
       {editing ? (
-        <EditEntry currentEntry={currentEntry} updateEntry={updateEntry} />
+         <div className={styles.form}>
+            <h2>Edit entry</h2>
+            <EditEntry currentEntry={currentEntry} updateEntry={updateEntry} />
+         </div>
+       
       ) : (
-        <AddEntry addEntry={addEntry} />
+        <div className={styles.form}>
+           <h2>New Entry</h2>
+          <AddEntry addEntry={addEntry} />
+        </div>
       )}
 
+      <div className={styles.containerTable}>
       {entry.length > 0 ? (
         <TableEntry entry={entry} deleteEntry={deleteEntry} editRow={editRow} />
       ) : (
         <p className={styles.message}>Table empty</p>
       )}
       {editing ? null : <Buttons save={save} entry={entry}/>}
+      </div>
     </div>
   );
 }
