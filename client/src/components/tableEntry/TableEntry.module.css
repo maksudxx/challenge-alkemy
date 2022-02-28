@@ -20,7 +20,7 @@
 .head{
    width: 25%;
    text-align: center;
-   border: 1px solid #000;
+   border-bottom: 1px solid rgb(94, 36, 255);
 }
 
 @media(max-width: 768px){
@@ -29,6 +29,9 @@
     }
     .containerTable{
         width: 300px;;
-        border: 1px solid rgb(94, 36, 255)
+    }
+
+    .button{
+        width: 25px;
     }
 }

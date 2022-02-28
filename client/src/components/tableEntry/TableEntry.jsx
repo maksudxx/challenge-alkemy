@@ -1,4 +1,6 @@
 import styles from "./TableEntry.module.css";
+import {AiOutlineEdit} from "react-icons/ai"
+import {MdDelete} from "react-icons/md" 
 export default function TableEntry(props) {
   return (
     <table className={styles.containerTable}>
@@ -17,22 +19,22 @@ export default function TableEntry(props) {
             <td>{e.amount}</td>
             <td>{e.type == 1 ? "Entry" : "Expenses"}</td>
             <td>
-              <button
+              <AiOutlineEdit
                 onClick={() => {
                   props.editRow(e);
                 }}
                 className={styles.button}
               >
                 Edit
-              </button>
-              <button
+              </AiOutlineEdit>
+              <MdDelete
                 onClick={() => {
                   props.deleteEntry(e.id);
                 }}
                 className={styles.button}
               >
                 Delete
-              </button>
+              </MdDelete>
             </td>
           </tr>
         ))}
