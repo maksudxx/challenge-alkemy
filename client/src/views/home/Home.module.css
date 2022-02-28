@@ -10,6 +10,10 @@
  
 }
 
+.text{
+  margin-right: 50px;
+}
+
 @media (max-width: 578px) {
   .containerHome {
     display: flex;

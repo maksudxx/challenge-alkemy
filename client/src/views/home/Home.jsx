@@ -12,13 +12,13 @@ export default function Home() {
   const total = operations.sumBalance({ data });
   return (
     <div className={styles.container}>
-      <Navbar/>
+      <Navbar />
+      <h1>Last 10 Movements</h1>
+      <span className={styles.balance}>
+        <p className={styles.text}>Balance: </p>
+        <p>${total}</p>
+      </span>
       <div className={styles.containerHome}>
-        <h1>Last 10 Movements</h1>
-        <span className={styles.balance} >
-          <p>Balance: </p>
-          <p>${total}</p>
-        </span>
         <div className={styles.containerCards}>
           <ul className={styles.ul}>
             {data.length > 0 ? (
