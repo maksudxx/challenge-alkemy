@@ -1,0 +1,43 @@
+.container {
+  background: url("../../assets/budget.jpg") no-repeat center;
+  min-height: 100vh;
+  --webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  background-size: 100% 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+.link {
+  align-items: center;
+  text-shadow: #fff 0px 0px 5px, #fff 0px 0px 10px, #fff 0px 0px 15px,
+    #7d2dff 0px 0px 20px, #7d2dff 0px 0px 30px, #7d2dff 0px 0px 40px,
+    #7d2dff 0px 0px 50px, #7d2dff 0px 0px 75px,
+    -26px 2px 2px rgba(206, 89, 55, 0);
+  text-decoration: none;
+}
+
+.p {
+  margin: 0;
+}
+
+.buttonStart {
+  display: flex;
+  border: 5px solid #7d2dff;
+  border-radius: 10px;
+  width: 150px;
+  height: 90px;
+  font-size: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.title{
+    text-shadow: #fff 0px 0px 5px, #fff 0px 0px 10px, #fff 0px 0px 15px,
+    #7d2dff 0px 0px 20px, #7d2dff 0px 0px 30px, #7d2dff 0px 0px 40px,
+    #7d2dff 0px 0px 50px, #7d2dff 0px 0px 75px,
+    -26px 2px 2px rgba(206, 89, 55, 0);
+}
