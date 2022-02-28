@@ -1,10 +1,11 @@
 
   .container {
     list-style: none;
-    width: 100%;
+    width: 900px;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    border-bottom: 1px solid #ab76ff;
   }
 
   .up {
@@ -15,16 +16,16 @@
   }
 
   .containerIcons {
-    width: 20%;
+    
     display: flex;
     justify-content: center;
     align-items: center;
   }
   .details {
-    width: 40%;
+    
   }
 
   .amount {
-    width: 30%;
+    text-align: center;
   }
 
