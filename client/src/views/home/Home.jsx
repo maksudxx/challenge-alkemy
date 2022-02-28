@@ -15,8 +15,8 @@ export default function Home() {
       <Navbar/>
       <div className={styles.containerHome}>
         <h1>Last 10 Movements</h1>
-        <span className={styles.balance}>
-          <p>Balance </p>
+        <span className={styles.balance} >
+          <p>Balance: </p>
           <p>${total}</p>
         </span>
         <div className={styles.containerCards}>

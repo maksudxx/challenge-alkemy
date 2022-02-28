@@ -1,3 +1,15 @@
+.balance {
+  display: flex;
+  flex-direction: row;
+}
+
+.containerHome {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+ 
+}
+
 @media (max-width: 578px) {
   .containerHome {
     display: flex;
@@ -19,6 +31,7 @@
       align-items: center;
       width: 50%;
       justify-content: space-around;
+      flex-direction: row;
   }
 }
 
