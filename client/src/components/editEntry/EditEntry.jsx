@@ -1,6 +1,7 @@
 import {useForm} from "react-hook-form"
 import styles from './EditEntry.module.css'
 import { useState, useEffect } from "react";
+import{useNavigate} from 'react-router-dom'
 const operations = require("../../utils/operations");
 export default function EditEntry(props){
   const [category, setCategory] = useState([]);
@@ -14,11 +15,15 @@ export default function EditEntry(props){
 
     setValue('concept', props.currentEntry.concept)
     setValue('amount', props.currentEntry.amount)
-
+    const navigate = useNavigate()
     const onSubmit = (data, e)=>{
         console.log(data);
         props.updateEntry(props.currentEntry.id, data)
         e.target.reset()
+    }
+
+    const back = ()=>{
+      navigate('/newEntry')
     }
     return (
       <div className={styles.container}>
@@ -51,7 +56,10 @@ export default function EditEntry(props){
           ))}
         </select>
           <br />
-          <button className={styles.btn}>Edit</button>
+         <div>
+         <button className={styles.btn}>Edit</button>
+        <button className={styles.btn} onClick={back}>Cancel</button>
+         </div>
         </form>
       </div>
     );
