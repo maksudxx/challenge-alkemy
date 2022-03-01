@@ -76,7 +76,9 @@ export default function NewEntry() {
       {entry.length > 0 ? (
         <TableEntry entry={entry} deleteEntry={deleteEntry} editRow={editRow} />
       ) : (
-        <p className={styles.message}>Table empty</p>
+        <div>
+          <p className={styles.message}>Table empty</p>
+        </div>
       )}
       {editing ? null : <Buttons save={save} entry={entry}/>}
       </div>
